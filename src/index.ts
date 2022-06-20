@@ -4,6 +4,12 @@ run();
 function run() {
   const rootEl = getElementByIdOrThrow("root");
 
+  interface contact {
+    id: string;
+    name: string;
+    email: string | null;
+  }
+
   // The list of contacts
   let contacts = [
     {
