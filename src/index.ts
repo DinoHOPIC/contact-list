@@ -4,14 +4,14 @@ run();
 function run() {
   const rootEl = getElementByIdOrThrow("root");
 
-  interface contact {
+  interface Contact {
     id: string;
     name: string;
     email: string | null;
   }
 
   // The list of contacts
-  let contacts = [
+  let contacts: Contact[] = [
     {
       id: "p9n51g",
       name: "Alice",
@@ -39,7 +39,12 @@ function run() {
   // This function create the HTML structure
   // and add it to the root element in the DOM
   function createApp() {
-    const titleEl = createElement("h1", {
+    interface TitleElement {
+      children: string;
+      className: string;
+    }
+
+    const titleEl: TitleElement = createElement("h1", {
       children: "Contacts",
       className: "title",
     });
